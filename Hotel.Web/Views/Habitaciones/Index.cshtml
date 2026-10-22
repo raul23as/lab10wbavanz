@@ -1,0 +1,6 @@
+@model IEnumerable<Hotel.Web.Models.Habitacion>
+@{ ViewData["Title"] = "Habitaciones"; }
+<h1>Habitaciones</h1>
+<form method="get" class="row g-2 mb-3"><div class="col-auto"><select name="tipoId" asp-items="ViewBag.Tipos" class="form-select"><option value="">Todos los tipos</option></select></div><div class="col-auto"><button class="btn btn-outline-primary">Filtrar</button></div></form>
+<p><a asp-action="Create" class="btn btn-primary">Nueva habitación</a></p>
+<table class="table table-striped"><thead><tr><th>Número</th><th>Piso</th><th>Tipo</th><th></th></tr></thead><tbody>@foreach (var h in Model) { <tr><td>@h.Numero</td><td>@h.Piso</td><td>@h.IdTipoHabitacionNavigation.Nombre</td><td><a asp-action="Details" asp-route-id="@h.IdHabitacion">Detalle</a> | <a asp-action="Edit" asp-route-id="@h.IdHabitacion">Editar</a> | <a asp-action="Delete" asp-route-id="@h.IdHabitacion">Desactivar</a></td></tr> }</tbody></table>

@@ -1,0 +1,2 @@
+@model Hotel.Web.Models.Habitacion
+<h1>Desactivar habitación</h1><div class="alert alert-warning">¿Confirma desactivar la habitación @Model.Numero? No se eliminará físicamente.</div><form asp-action="Delete" method="post"><input type="hidden" name="id" value="@Model.IdHabitacion"/><button class="btn btn-danger">Confirmar desactivación</button> <a asp-action="Index" class="btn btn-secondary">Volver</a></form>

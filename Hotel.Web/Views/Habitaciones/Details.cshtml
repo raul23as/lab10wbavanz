@@ -1,0 +1,2 @@
+@model Hotel.Web.Models.Habitacion
+<h1>Detalle de habitación</h1><dl class="row"><dt class="col-sm-2">Número</dt><dd class="col-sm-10">@Model.Numero</dd><dt class="col-sm-2">Piso</dt><dd class="col-sm-10">@Model.Piso</dd><dt class="col-sm-2">Tipo</dt><dd class="col-sm-10">@Model.IdTipoHabitacionNavigation.Nombre</dd><dt class="col-sm-2">Estado</dt><dd class="col-sm-10">@(Model.Activo ? "Activa" : "Inactiva")</dd></dl><a asp-action="Index" class="btn btn-secondary">Volver</a>
